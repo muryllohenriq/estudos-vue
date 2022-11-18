@@ -7,6 +7,9 @@
         <li>React</li>
         <li>Vue</li>
     </ul>
+    <div>
+        <button @click="showEmail">{{ textoBotao }}</button>
+    </div>
     <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
     <p>Para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
     <Picture />
@@ -23,9 +26,20 @@ export default {
     data() {
         return {
             esta_trabalhando: false,
-            mostrar_email: true,
+            mostrar_email: false,
             email: 'muryllo@email.com',
-            meu_link: 'https://github.com/muryllohenriq'
+            meu_link: 'https://github.com/muryllohenriq',
+            textoBotao: 'Mostrar e-mail'
+        }
+    },
+    methods: {
+        showEmail() {
+            this.mostrar_email = !this.mostrar_email // quando clicar ele virará o oposto
+            if (!this.mostrar_email) {
+                this.textoBotao = 'Mostrar e-mail'
+            } else {
+                this.textoBotao = 'Esconder e-mail'
+            }
         }
     }
 }
