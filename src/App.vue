@@ -1,5 +1,5 @@
 <template>
-  <Header/>
+  <Header :esta_logado="true" />
   <PrimeiroComponente />
   <p class="paragrafo-pai">Hey there!</p>
   <LifeCycle />

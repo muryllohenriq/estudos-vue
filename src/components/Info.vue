@@ -32,11 +32,13 @@ export default {
   components: {
     Picture,
   },
+  props: {
+    email: String,
+    esta_trabalhando: Boolean
+  },
   data() {
     return {
-      esta_trabalhando: false,
       mostrar_email: false,
-      email: "muryllo@email.com",
       meu_link: "https://github.com/muryllohenriq",
       textoBotao: "Mostrar e-mail",
       backend_technologies: ["javascript", "node", "express", "mysql"],
